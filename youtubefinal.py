@@ -1,12 +1,10 @@
 #importing the necessary libraries
 import pandas as pd
-import plotly.express as px
 import streamlit as st
 from streamlit_option_menu import option_menu
 import mysql.connector as sql
 import pymongo
 from googleapiclient.discovery import build
-from PIL import Image
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -21,7 +19,16 @@ api_service_name = 'youtube'
 api_version = 'v3'
 api_key = 'AIzaSyCRReAKEOLdDQCN7RfuMXmWurLKzEBLdgk'
 youtube = build(api_service_name,api_version,developerKey =api_key)
-channel_id='UCWvrhwQpW4MNCWKzTz_Qh3g'
+channel_id=['UCWvrhwQpW4MNCWKzTz_Qh3g',
+            'UCXdZNHV74WIzwR07T3fy8qg',
+            'UCzT9Hm342UtKel4XG5qh4Qw', 
+            'UCz5o6ePrbmmnKa9fGZP6tHQ',
+            'UCOe2svFdokRH2l0lvQURbqg',
+            'UCnVpEcfut-Bu1IFmQr7vRuw',
+            'UCwr-evhuzGZgDFrq_1pLt_A',
+            'UC3CWkAYRbqUFLq6wQF-VyPw',
+            'UCtYIA8Wxbt-tvo9Ovyow6xg',
+            'UCtfzxaW5ua7X0NfYn-RSx3w']
 
 # CONNECTING WITH MYSQL DATABASE
 import mysql.connector
