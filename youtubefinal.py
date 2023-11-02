@@ -345,11 +345,7 @@ if selected == "DATA ANALYSIS":
         st.write(df)
 
     elif questions == '4. How many comments were made on each video, and what are their corresponding video names?':
-        mycursor.execute("""SELECT a.video_id, a.video_title, b.comment_count
-                            FROM videodetails AS a
-                            LEFT JOIN (SELECT video_id,COUNT(comment_id) AS comment_count
-                            FROM commentsdetails GROUP BY video_id) AS b
-                            ON a.video_id = b.video_id ORDER BY b.comment_count DESC""")
+        mycursor.execute("""SELECT video_title, comment_count from videodetails""")
         df = pd.DataFrame(mycursor.fetchall(),columns=mycursor.column_names)
         st.write(df)
                     
